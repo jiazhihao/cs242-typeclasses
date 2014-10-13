@@ -17,11 +17,11 @@ instance Abs Char where
   x =||= y   = toLower x == toLower y
   magnitude  = ord . toLower
 
-cmp :: {- Task 0 -}
-cmp x y = error "Task 0"
+cmp :: Abs n => n -> n -> Bool
+cmp x y = x =||= y
 
-cmpMagnitude :: {- Task 0 -}
-cmpMagnitude x y = error "Task 0"
+cmpMagnitude :: (Abs n, Abs m) => n -> m -> Bool
+cmpMagnitude x y = magnitude x == magnitude y
 
 
 -- | Implemented the Abs instance definition for
