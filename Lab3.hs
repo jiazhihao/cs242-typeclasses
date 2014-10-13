@@ -28,7 +28,10 @@ cmpMagnitude x y = magnitude x == magnitude y
 -- arbitrary Tree's. A tree is equal (=||=) to another if it is
 -- structually equivalent and all the leaf and node values are equal
 -- (=||=).
-instance Abs (Tree a) where
- (=||=) = error "Task 1"
+instance Abs a => Abs (Tree a) where
+ (Leaf x) =||= (Leaf y) = x =||= y
+ (Node x lx rx) =||= (Node y ly ry) = (x =||= y) || (lx =||= ly) || (rx =||= ry)
+ _ =||= _ = False
 
- magnitude = error "Task 1"
+ magnitude (Leaf x) = magnitude x
+ magnitude (Node x lx rx) = (magnitude x) * height (Node x lx rx)
