@@ -32,5 +32,5 @@ dAbsTreeInt = error "Task 4"
 cmp :: AbsD a -> a -> a -> String
 cmp dic x y = if((=||=) dic x y) then "Abs-Equal" else "Abs-Not-Equal"
 
-cmpMagnitude :: fillMeIn {- Task 5 -}
-cmpMagnitude = error "Task 5"
+cmpMagnitude :: AbsD a -> AbsD b -> a -> b -> String
+cmpMagnitude dicx dicy x y = if(magnitude dicx x == magnitude dicy y) then "Abs-Equal" else "Abs-Not-Equal"
