@@ -3,23 +3,23 @@ module Dic3 where
 import Data.Char (ord, toLower)
 import Tree
 
-data AbsD a = MkAbsD {- Task 2 -}
+data AbsD a = MkAbsD {comp :: (a->a->Bool), magn :: (a->Int)}
 
 -- | Returns True the two elements have equal magnitude
 (=||=) :: AbsD a -> (a -> a -> Bool)
-(=||=) = error "Task 2"
+(=||=) = comp
 
 -- | Get the magnitude of this element as an Int
 magnitude :: AbsD a  -> (a -> Int)
-magnitude = error "Task 2"
+magnitude = magn
 
 -- | Dictionary for Int
 dAbsInt :: AbsD Int
-dAbsInt = error "Task 3"
+dAbsInt = MkAbsD {comp = \x -> \y -> abs x == abs y, magn = abs }
 
 -- | Dictionary for Int
 dAbsChar :: AbsD Char
-dAbsChar = error "Task 3"
+dAbsChar = MkAbsD {comp = \x -> \y -> toLower x == toLower y, magn = ord . toLower }
 
 -- | Dictionary for Trees
 dAbsTree :: fillMeIn {- Task 4 -}
