@@ -22,11 +22,15 @@ dAbsChar :: AbsD Char
 dAbsChar = MkAbsD {comp = \x -> \y -> toLower x == toLower y, magn = ord . toLower }
 
 -- | Dictionary for Trees
-dAbsTree :: fillMeIn {- Task 4 -}
-dAbsTree = error "Task 4"
+dAbsTree :: AbsD (Tree a)
+dAbsTree = error "Task 4" 
+
+-- | Dictionary for Tree Int
+dAbsTreeInt :: AbsD (Tree Int)
+dAbsTreeInt = error "Task 4"
 
 cmp :: AbsD a -> a -> a -> String
-cmp dic x y = error "Task 5"
+cmp dic x y = if((=||=) dic x y) then "Abs-Equal" else "Abs-Not-Equal"
 
 cmpMagnitude :: fillMeIn {- Task 5 -}
 cmpMagnitude = error "Task 5"

@@ -17,11 +17,13 @@ instance Abs Char where
   x =||= y   = toLower x == toLower y
   magnitude  = ord . toLower
 
-cmp :: Abs n => n -> n -> Bool
-cmp x y = x =||= y
+cmp :: Abs n => n -> n -> String
+cmp x y = if (x =||= y) then "Abs-Equal" else "Abs-Not-Equal"
 
-cmpMagnitude :: (Abs n, Abs m) => n -> m -> Bool
-cmpMagnitude x y = magnitude x == magnitude y
+cmpMagnitude :: (Abs n, Abs m) => n -> m -> String
+cmpMagnitude x y = if (magnitude x == magnitude y) 
+                       then "Abs-Equal"
+                       else "Abs-Not-Equal"
 
 
 -- | Implemented the Abs instance definition for
