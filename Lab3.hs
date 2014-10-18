@@ -22,8 +22,8 @@ cmp x y = if (x =||= y) then "Abs-Equal" else "Abs-Not-Equal"
 
 cmpMagnitude :: (Abs n, Abs m) => n -> m -> String
 cmpMagnitude x y = if (magnitude x == magnitude y) 
-                       then "Abs-Equal"
-                       else "Abs-Not-Equal"
+                   then "Abs-Equal"
+                   else "Abs-Not-Equal"
 
 
 -- | Implemented the Abs instance definition for
